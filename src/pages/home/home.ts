@@ -24,7 +24,7 @@ export class HomePage {
             let input = new FormData();
             input.append('image', file);
 
-            this.http.post('/upload.php', input)
+            this.http.post('https://upload-api.geekity.com/upload.php', input)
               .toPromise()
               .then((res) => {
                 console.dir(res);
