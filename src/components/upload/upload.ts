@@ -1,5 +1,5 @@
 import { Component, ViewChild, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { PersistService } from '../../services/persist.service';
 
 @Component({
     selector: 'upload',
@@ -11,7 +11,7 @@ export class UploadComponent {
     @Output('path') path: EventEmitter<any>;
 
     constructor(
-        private http: HttpClient
+        public service: PersistService
     ) {
         this.path = new EventEmitter<any>();
     }
@@ -27,8 +27,7 @@ export class UploadComponent {
             let input = new FormData();
             input.append('image', file);
 
-            this.http.post('https://upload-api.geekity.com/upload.php', input)
-                .toPromise()
+            this.service.setData('upload.php', input)
                 .then((res) => {
                     this.path.emit(res);
                 })
