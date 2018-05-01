@@ -7,8 +7,6 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="upload()">Upload</button>
-  <form style="display: none;">
-    <input type="file" (change)="onFileChange($event)" #file>
-  </form>
+  <button ion-button (click)="uploadImage()">Upload</button>
+  <upload (path)="setImage($event)" #file></upload>
 </ion-content>
