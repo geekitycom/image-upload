@@ -27,7 +27,7 @@ export class UploadComponent {
             let input = new FormData();
             input.append('image', file);
 
-            this.service.setData('imgup', input)
+            this.service.setData('upload.php', input)
                 .then((res) => {
                     this.path.emit(res);
                 })
