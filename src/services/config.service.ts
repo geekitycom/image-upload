@@ -6,10 +6,10 @@ export class ConfigService {
 
   private _CONFIG = {
     local: {
-      apiRoot: 'http://upload.test'
+      apiRoot: 'https://staging.stryv.io'
     },
     production: {
-      apiRoot: 'https://upload-api.geekity.com'
+      apiRoot: 'https://staging.stryv.io'
     }
   };
 
